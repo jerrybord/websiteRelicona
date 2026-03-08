@@ -24,16 +24,44 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.about": "About",
 
     // Hero section
-    "hero.badge": "shipped new features!",
-    "hero.titleLine1": "Where Structure and Imagination",
-    "hero.titleLine2": "Move Forward",
-    "hero.subtitle": "Building meaningful digital products with purpose.",
+    "hero.badge": "crypto & AI focused",
+    "hero.titleLine1": "Crypto & AI Products.",
+    "hero.titleLine2": "Built Right.",
+    "hero.subtitle": "We build Telegram bots, DeFi tools, and AI-powered apps for startups that move fast.",
     "hero.bookCall": "Book a Call",
     "hero.getStarted": "Get started",
 
-    // Logos section
-    "logos.trustedBy": "Trusted by",
-    "logos.experts": "experts",
+    // Logos section (keeping structure for future real clients)
+    "logos.trustedBy": "Used by",
+    "logos.experts": "startups",
+
+    // Services section
+    "services.heading": "What We Do",
+    "services.subheading": "From idea to production-ready code",
+    "services.bot.title": "Telegram Bots",
+    "services.bot.desc": "Payment systems, DeFi integrations, automation, and custom bot solutions",
+    "services.defi.title": "DeFi Tools",
+    "services.defi.desc": "Smart contracts, trading bots, analytics dashboards, and blockchain integrations",
+    "services.ai.title": "AI Integration",
+    "services.ai.desc": "LLM-powered apps, automation, data analysis, and intelligent systems",
+    "services.design.title": "Design & Prototyping",
+    "services.design.desc": "From Figma to production-ready UI with modern design systems",
+
+    // Portfolio section
+    "portfolio.heading": "Recent Work",
+    "portfolio.subheading": "Projects we've built for startups and ourselves",
+    "portfolio.imageComingSoon": "Screenshot coming soon",
+    "portfolio.project1.title": "Telegram Stars Payment Bot",
+    "portfolio.project1.desc": "Automated Telegram Stars purchase system with RUB payment integration",
+    "portfolio.project1.tech": "Node.js, Telegram API, Payment APIs",
+    "portfolio.project2.title": "VPN Service in Telegram",
+    "portfolio.project2.desc": "Fast VPN service with Telegram bot interface and RUB payments",
+    "portfolio.project2.tech": "Telegram Bot, VPN APIs, Payment Systems",
+    "portfolio.project3.title": "Custom DeFi Tool",
+    "portfolio.project3.desc": "Trading automation and analytics for crypto enthusiasts",
+    "portfolio.project3.tech": "React, Web3.js, Trading APIs",
+    "portfolio.cta": "Want to build something like this?",
+    "portfolio.ctaButton": "Let's talk",
 
     // Onboarding form — step titles
     "form.step.personal": "Personal Info",
@@ -94,16 +122,44 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.about": "\u041E \u043D\u0430\u0441",
 
     // Hero section
-    "hero.badge": "\u043D\u043E\u0432\u044B\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u0443\u0436\u0435 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B!",
-    "hero.titleLine1": "\u0413\u0434\u0435 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 \u0438 \u0432\u043E\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435",
-    "hero.titleLine2": "\u0434\u0432\u0438\u0436\u0443\u0442\u0441\u044F \u0432\u043F\u0435\u0440\u0451\u0434",
-    "hero.subtitle": "\u0421\u043E\u0437\u0434\u0430\u0451\u043C \u0446\u0438\u0444\u0440\u043E\u0432\u044B\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u044B \u0441\u043E \u0441\u043C\u044B\u0441\u043B\u043E\u043C \u0438 \u0446\u0435\u043B\u044C\u044E.",
-    "hero.bookCall": "\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C \u0437\u0432\u043E\u043D\u043E\u043A",
-    "hero.getStarted": "\u041D\u0430\u0447\u0430\u0442\u044C",
+    "hero.badge": "крипта & AI",
+    "hero.titleLine1": "Крипта & AI продукты.",
+    "hero.titleLine2": "Сделано правильно.",
+    "hero.subtitle": "Создаём Telegram-боты, DeFi-инструменты и AI-приложения для стартапов, которые двигаются быстро.",
+    "hero.bookCall": "Забронировать звонок",
+    "hero.getStarted": "Начать",
 
     // Logos section
-    "logos.trustedBy": "\u041D\u0430\u043C \u0434\u043E\u0432\u0435\u0440\u044F\u044E\u0442",
-    "logos.experts": "\u044D\u043A\u0441\u043F\u0435\u0440\u0442\u044B",
+    "logos.trustedBy": "Используют",
+    "logos.experts": "стартапы",
+
+    // Services section
+    "services.heading": "Чем мы занимаемся",
+    "services.subheading": "От идеи до готового продукта",
+    "services.bot.title": "Telegram-боты",
+    "services.bot.desc": "Платёжные системы, DeFi-интеграции, автоматизация и кастомные решения",
+    "services.defi.title": "DeFi-инструменты",
+    "services.defi.desc": "Смарт-контракты, торговые боты, аналитические дашборды и блокчейн-интеграции",
+    "services.ai.title": "AI-интеграция",
+    "services.ai.desc": "LLM-приложения, автоматизация, анализ данных и интеллектуальные системы",
+    "services.design.title": "Дизайн и прототипирование",
+    "services.design.desc": "От Figma до production-ready UI с современными дизайн-системами",
+
+    // Portfolio section
+    "portfolio.heading": "Недавние проекты",
+    "portfolio.subheading": "Проекты, которые мы создали для стартапов и себя",
+    "portfolio.imageComingSoon": "Скриншот скоро появится",
+    "portfolio.project1.title": "Бот покупки Telegram Stars",
+    "portfolio.project1.desc": "Автоматизированная система покупки Telegram Stars с интеграцией оплаты в рублях",
+    "portfolio.project1.tech": "Node.js, Telegram API, платёжные API",
+    "portfolio.project2.title": "VPN-сервис в Telegram",
+    "portfolio.project2.desc": "Быстрый VPN-сервис с интерфейсом Telegram-бота и оплатой в рублях",
+    "portfolio.project2.tech": "Telegram Bot, VPN APIs, платёжные системы",
+    "portfolio.project3.title": "Кастомный DeFi-инструмент",
+    "portfolio.project3.desc": "Автоматизация торговли и аналитика для крипто-энтузиастов",
+    "portfolio.project3.tech": "React, Web3.js, торговые API",
+    "portfolio.cta": "Хотите создать что-то подобное?",
+    "portfolio.ctaButton": "Давайте поговорим",
 
     // Onboarding form — step titles
     "form.step.personal": "\u041B\u0438\u0447\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435",

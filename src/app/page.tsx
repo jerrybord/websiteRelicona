@@ -7,6 +7,8 @@ import { Header } from "@/components/ui/header-1";
 import { FallingPattern } from "@/components/ui/falling-pattern";
 import OnboardingForm from "@/components/ui/onboarding-form";
 import { LanguageProvider } from "@/lib/language-context";
+import { ServicesSection } from "@/components/ui/services-section";
+import { PortfolioSection } from "@/components/ui/portfolio-section";
 
 export default function DemoOne() {
 	const [showForm, setShowForm] = useState(false);
@@ -38,7 +40,9 @@ export default function DemoOne() {
 				<Header />
 				<main className="grow">
 					<HeroSection onGetStarted={() => setShowForm(true)} />
-					<LogosSection />
+					{/* LogosSection removed - will add real clients later */}
+					<ServicesSection />
+					<PortfolioSection />
 				</main>
 			</div>
 
