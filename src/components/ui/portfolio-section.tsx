@@ -51,7 +51,7 @@ export function PortfolioSection() {
 			: projects.filter((p) => p.category === filter);
 
 	return (
-		<section className="relative py-24 px-4 bg-gradient-to-b from-transparent to-orange-50/30">
+		<section className="relative py-24 px-4 bg-gradient-to-b from-orange-50/50 to-white">
 			<div className="mx-auto max-w-7xl">
 				{/* Header */}
 				<div className="text-center mb-12">

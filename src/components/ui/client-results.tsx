@@ -292,7 +292,7 @@ export function ClientResultsSection() {
   ];
 
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-transparent to-orange-50/30 dark:to-orange-950/10">
+    <section className="relative py-24 px-4 bg-gradient-to-b from-[#fffbf5] to-orange-50/50 dark:to-orange-950/10">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">

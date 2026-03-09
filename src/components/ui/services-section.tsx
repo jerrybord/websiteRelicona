@@ -40,7 +40,7 @@ export function ServicesSection() {
 	const { t } = useLanguage();
 
 	return (
-		<section className="relative py-24 px-4">
+		<section className="relative py-24 px-4 bg-[#fffbf5]">
 			{/* Animated background gradient */}
 			<div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-50" />
 
