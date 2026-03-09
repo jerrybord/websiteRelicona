@@ -30,8 +30,8 @@ export default function DemoOne() {
 				}}
 			/>
 
-			{/* Animated falling pattern */}
-			<div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+			{/* Animated falling pattern - hidden on mobile for performance */}
+			<div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none hidden md:block">
 				<FallingPattern className="h-full [mask-image:radial-gradient(ellipse_at_center,transparent,var(--background))]" />
 			</div>
 
