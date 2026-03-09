@@ -47,6 +47,16 @@ const translations: Record<Language, Record<string, string>> = {
     "services.design.title": "Design & Prototyping",
     "services.design.desc": "From Figma to production-ready UI with modern design systems",
 
+    // Results section
+    "results.heading": "Results That Speak Louder",
+    "results.subheading": "Real impact we deliver to our clients",
+    "results.revenue.title": "Revenue Growth",
+    "results.revenue.desc": "Average client sees 40% revenue increase in first quarter",
+    "results.conversion.title": "Conversion Rate",
+    "results.conversion.desc": "Optimized UX increases conversion by 1.5x on average",
+    "results.time.title": "Time to Market",
+    "results.time.desc": "Launch projects 3x faster than industry standard",
+
     // Portfolio section
     "portfolio.heading": "Recent Work",
     "portfolio.subheading": "Projects we've built for startups and ourselves",
@@ -148,6 +158,16 @@ const translations: Record<Language, Record<string, string>> = {
     "services.ai.desc": "LLM-приложения, автоматизация, анализ данных и интеллектуальные системы",
     "services.design.title": "Дизайн и прототипирование",
     "services.design.desc": "От Figma до production-ready UI с современными дизайн-системами",
+
+    // Results section
+    "results.heading": "Результаты, которые говорят сами за себя",
+    "results.subheading": "Реальное влияние, которое мы оказываем на бизнес клиентов",
+    "results.revenue.title": "Рост выручки",
+    "results.revenue.desc": "Средний клиент видит 40% рост выручки в первом квартале",
+    "results.conversion.title": "Конверсия",
+    "results.conversion.desc": "Оптимизированный UX увеличивает конверсию в 1.5 раза",
+    "results.time.title": "Скорость запуска",
+    "results.time.desc": "Запускаем проекты в 3 раза быстрее отраслевого стандарта",
 
     // Portfolio section
     "portfolio.heading": "Недавние проекты",

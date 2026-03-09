@@ -8,6 +8,7 @@ import { FallingPattern } from "@/components/ui/falling-pattern";
 import OnboardingForm from "@/components/ui/onboarding-form";
 import { LanguageProvider } from "@/lib/language-context";
 import { ServicesSection } from "@/components/ui/services-section";
+import { ClientResultsSection } from "@/components/ui/client-results";
 import { PortfolioSection } from "@/components/ui/portfolio-section";
 
 export default function DemoOne() {
@@ -42,6 +43,7 @@ export default function DemoOne() {
 					<HeroSection onGetStarted={() => setShowForm(true)} />
 					{/* LogosSection removed - will add real clients later */}
 					<ServicesSection />
+					<ClientResultsSection />
 					<PortfolioSection />
 				</main>
 			</div>
