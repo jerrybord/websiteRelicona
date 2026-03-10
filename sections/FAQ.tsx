@@ -23,17 +23,27 @@ export function FAQ() {
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="relative bg-white rounded-xl border-2 border-gray-200 overflow-hidden group transition-all">
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] gradient-brand pointer-events-none">
-                <div className="w-full h-full bg-white rounded-xl"></div>
-              </div>
+            <div 
+              key={i} 
+              className="relative bg-white rounded-xl border-2 border-gray-200 transition-all group"
+              style={{
+                borderImage: 'none',
+              }}
+            >
+              {/* Gradient border on hover using pseudo-element */}
+              <div 
+                className="absolute -inset-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10"
+                style={{
+                  background: 'linear-gradient(to right, #FF3827 0%, #FF3827 1%, #FF3537 13%, #FF314F 33%, #FF4A42 44%, #FF6D30 59%, #FF961B 77%, #FFCA00 100%)',
+                }}
+              />
               
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="relative z-10 w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="relative w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors rounded-xl"
               >
                 <span className="text-lg font-semibold text-gray-900 pr-4">{faq.q}</span>
-                <svg className={`w-5 h-5 transition-transform ${open === i ? 'rotate-180' : ''}`} fill="none" stroke="url(#faq-arrow-gradient)" strokeWidth={2} viewBox="0 0 24 24">
+                <svg className={`w-5 h-5 flex-shrink-0 transition-transform ${open === i ? 'rotate-180' : ''}`} fill="none" stroke="url(#faq-arrow-gradient)" strokeWidth={2} viewBox="0 0 24 24">
                   <defs>
                     <linearGradient id="faq-arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#FF3827" />
@@ -50,7 +60,7 @@ export function FAQ() {
                 </svg>
               </button>
 
-              <div className={`relative z-10 overflow-hidden transition-all duration-300 ${open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className={`overflow-hidden transition-all duration-300 ${open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="px-6 pb-5 pt-2">
                   <p className="text-gray-600 leading-relaxed">{faq.a}</p>
                 </div>
