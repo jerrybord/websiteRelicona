@@ -1,6 +1,6 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
 import { FloatingParticles } from '../components/animations/FloatingParticles';
-import { SimpleFallingPattern } from '../components/ui/SimpleFallingPattern';
+import { FallingPattern } from '../components/ui/FallingPattern';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
 import { ResultsWithCharts } from '../sections/ResultsWithCharts';
@@ -8,9 +8,19 @@ import { FAQ } from '../sections/FAQ';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white relative">
+      {/* Falling Pattern Background - covers entire page until Final CTA */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <FallingPattern 
+          colors={['#FF3827', '#FF3537', '#FF314F', '#FF4A42', '#FF6D30', '#FF961B', '#FFCA00']}
+          backgroundColor="transparent"
+          duration={150}
+          blurIntensity="1em"
+          density={1}
+        />
+      </div>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
         {/* Floating Particles */}
         <FloatingParticles count={40} colors={['rgba(249,115,22,0.3)', 'rgba(251,191,36,0.3)']} />
 
@@ -18,11 +28,6 @@ export default function Home() {
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(45%_70%_at_50%_0%,rgba(249,115,22,0.10),transparent)]"></div>
           <div className="absolute inset-0 top-1/3 bg-[radial-gradient(50%_50%_at_50%_100%,rgba(251,191,36,0.08),transparent)]"></div>
-        </div>
-
-        {/* Falling Pattern - Simple & Visible */}
-        <div className="absolute inset-0 -z-10">
-          <SimpleFallingPattern />
         </div>
 
         {/* Content */}
@@ -85,10 +90,12 @@ export default function Home() {
       </section>
 
       {/* Social Proof */}
-      <SocialProof />
+      <div className="relative z-10">
+        <SocialProof />
+      </div>
 
       {/* Features Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="relative py-24 bg-gray-50 z-10">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             Everything You Need to{' '}
@@ -120,13 +127,17 @@ export default function Home() {
       </section>
 
       {/* Results with Interactive Charts */}
-      <ResultsWithCharts />
+      <div className="relative z-10">
+        <ResultsWithCharts />
+      </div>
 
       {/* FAQ */}
-      <FAQ />
+      <div className="relative z-10">
+        <FAQ />
+      </div>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 text-white">
+      {/* Final CTA - no falling pattern here */}
+      <section className="relative py-24 bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 text-white z-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-8">
             <span className="relative flex h-3 w-3">
@@ -156,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900 text-gray-400">
+      <footer className="relative py-12 bg-gray-900 text-gray-400 z-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">Relicona</h3>
