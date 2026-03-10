@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 bg-gray-900 text-gray-400 z-20">
+      <footer className="relative py-12 bg-black text-gray-400 z-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">Relicona</h3>

@@ -104,7 +104,7 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
               <YAxis stroke="#666" fontSize={12} />
               <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #e5e5e5', borderRadius: '8px', fontSize: '14px' }} />
-              <Line type="monotone" dataKey="value" stroke={`url(#gradient-${title})`} strokeWidth={3} dot={{ fill: firstColor, r: 5 }} activeDot={{ r: 7 }} animationDuration={1000} />
+              <Line type="monotone" dataKey="value" stroke={`url(#gradient-${title})`} strokeWidth={3} dot={false} activeDot={{ r: 6 }} animationDuration={1000} />
             </LineChart>
           </ResponsiveContainer>
         );
@@ -130,7 +130,7 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
           <ResponsiveContainer width="100%" height={300}>
             <BarChart {...commonProps}>
               <defs>
-                {renderGradientStops(`gradient-bar-${title}`)}
+                {renderGradientStops(`gradient-bar-${title}`, true)}
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
@@ -138,9 +138,7 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
               <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #e5e5e5', borderRadius: '8px' }} />
               <Bar 
                 dataKey="value" 
-                fill="white" 
-                stroke={`url(#gradient-bar-${title})`} 
-                strokeWidth={3} 
+                fill={`url(#gradient-bar-${title})`}
                 radius={[8, 8, 0, 0]} 
                 animationDuration={1000} 
               />
