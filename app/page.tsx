@@ -1,6 +1,6 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
 import { FloatingParticles } from '../components/animations/FloatingParticles';
-import { FallingPattern } from '../components/ui/FallingPattern';
+import { FallingPattern } from '@/components/ui/falling-pattern';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
 import { ResultsWithCharts } from '../sections/ResultsWithCharts';
@@ -9,14 +9,15 @@ import { FAQ } from '../sections/FAQ';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white relative">
-      {/* Falling Pattern Background - covers entire page until Final CTA */}
+      {/* Falling Pattern Background - exactly as in 21st.dev demo */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
         <FallingPattern 
           colors={['#FF3827', '#FF3537', '#FF314F', '#FF4A42', '#FF6D30', '#FF961B', '#FFCA00']}
-          backgroundColor="transparent"
+          backgroundColor="white"
           duration={150}
           blurIntensity="1em"
           density={1}
+          className="h-screen"
         />
       </div>
       {/* Hero Section */}

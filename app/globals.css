@@ -18,6 +18,11 @@
   font-display: swap;
 }
 
+/* 21st.dev falling pattern styles */
+.dark {
+  --background: oklch(0 0 0);
+}
+
 @layer base {
   body {
     @apply font-cygre antialiased bg-white text-gray-900;
