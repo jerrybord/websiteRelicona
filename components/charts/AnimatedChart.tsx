@@ -130,13 +130,20 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
           <ResponsiveContainer width="100%" height={300}>
             <BarChart {...commonProps}>
               <defs>
-                {renderGradientStops(`gradient-bar-${title}`, true)}
+                {renderGradientStops(`gradient-bar-${title}`)}
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
               <YAxis stroke="#666" fontSize={12} />
               <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #e5e5e5', borderRadius: '8px' }} />
-              <Bar dataKey="value" fill={`url(#gradient-bar-${title})`} radius={[8, 8, 0, 0]} animationDuration={1000} />
+              <Bar 
+                dataKey="value" 
+                fill="white" 
+                stroke={`url(#gradient-bar-${title})`} 
+                strokeWidth={3} 
+                radius={[8, 8, 0, 0]} 
+                animationDuration={1000} 
+              />
             </BarChart>
           </ResponsiveContainer>
         );

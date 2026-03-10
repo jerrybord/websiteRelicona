@@ -16,18 +16,6 @@ const timeData = [
   { name: 'Relicona', value: 28 }
 ];
 
-const satisfactionData = [
-  { name: 'Q1', value: 92 },
-  { name: 'Q2', value: 95 },
-  { name: 'Q3', value: 97 },
-  { name: 'Q4', value: 98.5 }
-];
-
-const deliveryData = [
-  { name: 'On Time', value: 99.2 },
-  { name: 'Delayed', value: 0.8 }
-];
-
 export function ResultsWithCharts() {
   return (
     <section className="py-24 bg-white">
@@ -41,10 +29,10 @@ export function ResultsWithCharts() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
           <AnimatedChart
             title="Client Revenue Growth"
-            type="area"
+            type="line"
             data={revenueData}
             metric="+142%"
             description="Average increase in first 6 months"
@@ -54,26 +42,8 @@ export function ResultsWithCharts() {
             title="Time to Market"
             type="bar"
             data={timeData}
-            gradient={{ from: '#06b6d4', to: '#8b5cf6' }}
             metric="3x Faster"
             description="vs traditional development (days)"
-          />
-
-          <AnimatedChart
-            title="Client Satisfaction"
-            type="line"
-            data={satisfactionData}
-            gradient={{ from: '#10b981', to: '#14b8a6' }}
-            metric="98.5%"
-            description="Would recommend to others"
-          />
-
-          <AnimatedChart
-            title="On-Time Delivery"
-            type="bar"
-            data={deliveryData}
-            metric="99.2%"
-            description="Projects delivered on schedule"
           />
         </div>
 
