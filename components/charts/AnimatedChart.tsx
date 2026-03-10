@@ -55,22 +55,24 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
     return () => clearInterval(timer);
   }, [isVisible, data]);
 
-  const renderGradientStops = (id: string, vertical: boolean = false) => {
+  const renderGradientStops = (id: string, direction: 'horizontal' | 'vertical' = 'horizontal') => {
+    const isVertical = direction === 'vertical';
+    
     if (isBrandGradient) {
       const { colors, stops } = effectiveGradient as { colors: string[]; stops: number[] };
       return (
-        <linearGradient id={id} x1="0" y1="0" x2={vertical ? "0" : "1"} y2={vertical ? "1" : "0"}>
+        <linearGradient id={id} x1="0" y1={isVertical ? "0" : "0"} x2={isVertical ? "0" : "1"} y2={isVertical ? "1" : "0"}>
           {colors.map((color, i) => (
-            <stop key={i} offset={`${stops[i]}%`} stopColor={color} stopOpacity={vertical && i === colors.length - 1 ? 0.1 : (vertical ? 0.8 : 1)} />
+            <stop key={i} offset={`${stops[i]}%`} stopColor={color} />
           ))}
         </linearGradient>
       );
     } else {
       const { from, to } = effectiveGradient as { from: string; to: string };
       return (
-        <linearGradient id={id} x1="0" y1="0" x2={vertical ? "0" : "1"} y2={vertical ? "1" : "0"}>
-          <stop offset="0%" stopColor={from} stopOpacity={vertical ? 0.8 : 1} />
-          <stop offset="100%" stopColor={to} stopOpacity={vertical ? 0.1 : 1} />
+        <linearGradient id={id} x1="0" y1={isVertical ? "0" : "0"} x2={isVertical ? "0" : "1"} y2={isVertical ? "1" : "0"}>
+          <stop offset="0%" stopColor={from} />
+          <stop offset="100%" stopColor={to} />
         </linearGradient>
       );
     }
@@ -98,13 +100,21 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
           <ResponsiveContainer width="100%" height={300}>
             <LineChart {...commonProps}>
               <defs>
-                {renderGradientStops(`gradient-${title}`)}
+                {renderGradientStops(`gradient-line-${title}`, 'horizontal')}
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
               <YAxis stroke="#666" fontSize={12} />
               <Tooltip contentStyle={{ backgroundColor: 'white', border: '1px solid #e5e5e5', borderRadius: '8px', fontSize: '14px' }} />
-              <Line type="monotone" dataKey="value" stroke={`url(#gradient-${title})`} strokeWidth={3} dot={false} activeDot={{ r: 6 }} animationDuration={1000} />
+              <Line 
+                type="monotone" 
+                dataKey="value" 
+                stroke={`url(#gradient-line-${title})`} 
+                strokeWidth={3} 
+                dot={false} 
+                activeDot={{ r: 6 }} 
+                animationDuration={1000} 
+              />
             </LineChart>
           </ResponsiveContainer>
         );
@@ -114,7 +124,7 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart {...commonProps}>
               <defs>
-                {renderGradientStops(`gradient-area-${title}`, true)}
+                {renderGradientStops(`gradient-area-${title}`, 'vertical')}
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
@@ -130,7 +140,7 @@ export function AnimatedChart({ title, type, data, gradient, metric, description
           <ResponsiveContainer width="100%" height={300}>
             <BarChart {...commonProps}>
               <defs>
-                {renderGradientStops(`gradient-bar-${title}`, true)}
+                {renderGradientStops(`gradient-bar-${title}`, 'vertical')}
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
               <XAxis dataKey="name" stroke="#666" fontSize={12} />
