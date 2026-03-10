@@ -2,7 +2,7 @@ import { GetStartedButton } from '../components/ui/GetStartedButton';
 import { FloatingParticles } from '../components/animations/FloatingParticles';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
-import { Results } from '../sections/Results';
+import { ResultsWithCharts } from '../sections/ResultsWithCharts';
 import { FAQ } from '../sections/FAQ';
 
 export default function Home() {
@@ -130,8 +130,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Results */}
-      <Results />
+      {/* Results with Interactive Charts */}
+      <ResultsWithCharts />
 
       {/* FAQ */}
       <FAQ />
