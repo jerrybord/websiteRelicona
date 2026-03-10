@@ -41,7 +41,7 @@ export default function Home() {
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             <span className="block text-gray-900">Build Crypto & AI</span>
-            <span className="block mt-2 bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+            <span className="block mt-2 gradient-brand-text">
               Faster Than Ever
             </span>
           </h1>
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 mt-8">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-orange-400 to-amber-400" />
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-white gradient-brand" />
               ))}
             </div>
             <p className="text-sm text-gray-600">
@@ -96,7 +96,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             Everything You Need to{' '}
-            <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+            <span className="gradient-brand-text">
               Ship Faster
             </span>
           </h2>
@@ -134,7 +134,7 @@ export default function Home() {
       </div>
 
       {/* Final CTA - no falling pattern here */}
-      <section className="relative py-24 bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 text-white z-20">
+      <section className="relative py-24 gradient-brand text-white z-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-8">
             <span className="relative flex h-3 w-3">

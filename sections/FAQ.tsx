@@ -43,9 +43,9 @@ export function FAQ() {
           ))}
         </div>
 
-        <div className="mt-12 text-center p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-200">
+        <div className="mt-12 text-center p-8 gradient-brand-light rounded-2xl border border-orange-200">
           <p className="text-lg text-gray-900 mb-4 font-semibold">Still have questions?</p>
-          <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-400 text-white font-semibold rounded-full hover:shadow-lg transition-all hover:scale-105">
+          <button className="px-6 py-3 gradient-brand text-white font-semibold rounded-full hover:shadow-lg transition-all hover:scale-105">
             Book a Call
           </button>
         </div>

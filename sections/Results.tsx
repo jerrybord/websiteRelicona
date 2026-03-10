@@ -4,7 +4,7 @@ export function Results() {
   const results = [
     { metric: '3x', label: 'Faster Time to Market', gradient: 'from-blue-500 to-cyan-500' },
     { metric: '60%', label: 'Lower Development Cost', gradient: 'from-purple-500 to-pink-500' },
-    { metric: '98%', label: 'Client Satisfaction Rate', gradient: 'from-orange-500 to-amber-500' }
+    { metric: '98%', label: 'Client Satisfaction Rate', gradient: 'gradient-brand-text' }
   ];
 
   return (
@@ -39,7 +39,7 @@ export function Results() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 gradient-brand-light rounded-3xl border border-orange-200">
           <div className="text-center">
             <div className="text-4xl font-bold text-orange-600 mb-2">$2.5M</div>
             <div className="text-sm text-gray-600">Revenue Generated</div>

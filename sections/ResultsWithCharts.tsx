@@ -46,7 +46,6 @@ export function ResultsWithCharts() {
             title="Client Revenue Growth"
             type="area"
             data={revenueData}
-            gradient={{ from: '#f97316', to: '#fbbf24' }}
             metric="+142%"
             description="Average increase in first 6 months"
           />
@@ -73,13 +72,12 @@ export function ResultsWithCharts() {
             title="On-Time Delivery"
             type="bar"
             data={deliveryData}
-            gradient={{ from: '#f97316', to: '#fbbf24' }}
             metric="99.2%"
             description="Projects delivered on schedule"
           />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-8 gradient-brand-light rounded-3xl border border-orange-200">
           <div className="text-center">
             <div className="text-4xl font-bold text-orange-600 mb-2">150+</div>
             <div className="text-sm text-gray-600">Projects Completed</div>

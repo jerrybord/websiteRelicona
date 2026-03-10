@@ -23,6 +23,48 @@
   --background: oklch(0 0 0);
 }
 
+/* Custom 7-color gradient from Relicona brand */
+.gradient-brand {
+  background: linear-gradient(to right, 
+    #FF3827 0%, 
+    #FF3827 1%, 
+    #FF3537 13%, 
+    #FF314F 33%, 
+    #FF4A42 44%, 
+    #FF6D30 59%, 
+    #FF961B 77%, 
+    #FFCA00 100%
+  );
+}
+
+.gradient-brand-text {
+  background: linear-gradient(to right, 
+    #FF3827 0%, 
+    #FF3827 1%, 
+    #FF3537 13%, 
+    #FF314F 33%, 
+    #FF4A42 44%, 
+    #FF6D30 59%, 
+    #FF961B 77%, 
+    #FFCA00 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-brand-light {
+  background: linear-gradient(to right, 
+    rgba(255, 56, 39, 0.05) 0%,
+    rgba(255, 53, 55, 0.05) 13%,
+    rgba(255, 49, 79, 0.05) 33%,
+    rgba(255, 74, 66, 0.05) 44%,
+    rgba(255, 109, 48, 0.05) 59%,
+    rgba(255, 150, 27, 0.05) 77%,
+    rgba(255, 202, 0, 0.05) 100%
+  );
+}
+
 @layer base {
   body {
     @apply font-cygre antialiased bg-white text-gray-900;
