@@ -1,5 +1,4 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
-import { FloatingParticles } from '../components/animations/FloatingParticles';
 import { FallingPattern } from '@/components/ui/falling-pattern';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
@@ -22,9 +21,6 @@ export default function Home() {
       </div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
-        {/* Floating Particles */}
-        <FloatingParticles count={40} colors={['rgba(249,115,22,0.3)', 'rgba(251,191,36,0.3)']} />
-
         {/* Background Gradients */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(45%_70%_at_50%_0%,rgba(249,115,22,0.10),transparent)]"></div>
