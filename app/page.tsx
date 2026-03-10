@@ -23,11 +23,11 @@ export default function Home() {
         {/* Falling Pattern (21st.dev inspired) */}
         <FallingPattern 
           colors={['#FF3827', '#FF3537', '#FF314F', '#FF4A42', '#FF6D30', '#FF961B', '#FFCA00']}
-          backgroundColor="white"
-          duration={120}
-          blurIntensity="0.8em"
-          opacity={0.5}
-          className="-z-10 hidden md:block"
+          backgroundColor="transparent"
+          duration={100}
+          blurIntensity="0.3em"
+          opacity={1.0}
+          className="-z-10"
         />
 
         {/* Content */}
