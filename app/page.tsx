@@ -1,6 +1,6 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
 import { FloatingParticles } from '../components/animations/FloatingParticles';
-import { FallingPattern } from '../components/ui/FallingPattern';
+import { SimpleFallingPattern } from '../components/ui/SimpleFallingPattern';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
 import { ResultsWithCharts } from '../sections/ResultsWithCharts';
@@ -20,15 +20,10 @@ export default function Home() {
           <div className="absolute inset-0 top-1/3 bg-[radial-gradient(50%_50%_at_50%_100%,rgba(251,191,36,0.08),transparent)]"></div>
         </div>
 
-        {/* Falling Pattern (21st.dev inspired) */}
-        <FallingPattern 
-          colors={['#FF3827', '#FF3537', '#FF314F', '#FF4A42', '#FF6D30', '#FF961B', '#FFCA00']}
-          backgroundColor="transparent"
-          duration={100}
-          blurIntensity="0.3em"
-          opacity={1.0}
-          className="-z-10"
-        />
+        {/* Falling Pattern - Simple & Visible */}
+        <div className="absolute inset-0 -z-10">
+          <SimpleFallingPattern />
+        </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
