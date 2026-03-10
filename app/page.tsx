@@ -1,4 +1,4 @@
-import { GetStartedButton } from '@/components/ui/GetStartedButton';
+import { GetStartedButton } from '../components/ui/GetStartedButton';
 
 export default function Home() {
   return (
