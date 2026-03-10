@@ -17,24 +17,40 @@ export function FAQ() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Questions? Answered.
+            Questions? <span className="gradient-brand-text">Answered.</span>
           </h2>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-orange-500 transition-all">
+            <div key={i} className="relative bg-white rounded-xl border-2 border-gray-200 overflow-hidden group transition-all">
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] gradient-brand pointer-events-none">
+                <div className="w-full h-full bg-white rounded-xl"></div>
+              </div>
+              
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="relative z-10 w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
                 <span className="text-lg font-semibold text-gray-900 pr-4">{faq.q}</span>
-                <svg className={`w-5 h-5 text-orange-500 transition-transform ${open === i ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <svg className={`w-5 h-5 transition-transform ${open === i ? 'rotate-180' : ''}`} fill="none" stroke="url(#faq-arrow-gradient)" strokeWidth={2} viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="faq-arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#FF3827" />
+                      <stop offset="1%" stopColor="#FF3827" />
+                      <stop offset="13%" stopColor="#FF3537" />
+                      <stop offset="33%" stopColor="#FF314F" />
+                      <stop offset="44%" stopColor="#FF4A42" />
+                      <stop offset="59%" stopColor="#FF6D30" />
+                      <stop offset="77%" stopColor="#FF961B" />
+                      <stop offset="100%" stopColor="#FFCA00" />
+                    </linearGradient>
+                  </defs>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
-              <div className={`overflow-hidden transition-all duration-300 ${open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className={`relative z-10 overflow-hidden transition-all duration-300 ${open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className="px-6 pb-5 pt-2">
                   <p className="text-gray-600 leading-relaxed">{faq.a}</p>
                 </div>

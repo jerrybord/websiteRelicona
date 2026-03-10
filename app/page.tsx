@@ -113,10 +113,15 @@ export default function Home() {
               { title: '🔒 Secure & Tested', desc: 'Bank-level security, thoroughly tested code', icon: '🔒' },
               { title: '📈 Proven Results', desc: '150+ successful projects, 98% satisfaction', icon: '📈' },
             ].map((f, i) => (
-              <div key={i} className="p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-orange-500 hover:shadow-xl transition-all hover:-translate-y-1 group">
-                <div className="text-4xl mb-4">{f.icon}</div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-orange-600 transition-colors">{f.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{f.desc}</p>
+              <div key={i} className="relative p-8 bg-white rounded-2xl border-2 border-gray-200 hover:shadow-xl transition-all hover:-translate-y-1 group overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] gradient-brand">
+                  <div className="w-full h-full bg-white rounded-2xl"></div>
+                </div>
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">{f.icon}</div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:gradient-brand-text transition-all">{f.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{f.desc}</p>
+                </div>
               </div>
             ))}
           </div>
