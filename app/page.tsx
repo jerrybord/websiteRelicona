@@ -1,10 +1,18 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
+import { FloatingParticles } from '../components/animations/FloatingParticles';
+import { CountUp } from '../components/animations/CountUp';
+import { SocialProof } from '../sections/SocialProof';
+import { Results } from '../sections/Results';
+import { FAQ } from '../sections/FAQ';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Floating Particles */}
+        <FloatingParticles count={40} colors={['rgba(249,115,22,0.3)', 'rgba(251,191,36,0.3)']} />
+
         {/* Background Gradients */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[radial-gradient(45%_70%_at_50%_0%,rgba(249,115,22,0.10),transparent)]"></div>
@@ -51,6 +59,22 @@ export default function Home() {
             From Telegram bots to DeFi platforms — production-ready in <strong className="text-orange-600">4 weeks</strong>
           </p>
 
+          {/* Stats Row */}
+          <div className="flex items-center justify-center gap-8 mb-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-gray-900"><CountUp end={100} duration={2} /></div>
+              <p className="text-sm text-gray-600">Projects</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-gray-900"><CountUp end={98} suffix="%" duration={2} /></div>
+              <p className="text-sm text-gray-600">Success Rate</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-gray-900"><CountUp end={4} duration={2} /></div>
+              <p className="text-sm text-gray-600">Weeks Avg</p>
+            </div>
+          </div>
+
           <div className="flex flex-wrap items-center justify-center gap-4">
             <GetStartedButton>Start Your Project</GetStartedButton>
             <button className="px-8 py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-full hover:border-orange-500 hover:text-orange-600 transition-all">
@@ -71,24 +95,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Social Proof */}
+      <SocialProof />
+
       {/* Features Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Why Choose <span className="text-orange-600">Relicona</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            Everything You Need to{' '}
+            <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+              Ship Faster
+            </span>
           </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            Full-stack development, design, deployment — all in one package
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: '⚡ Fast', desc: '4 weeks from idea to launch' },
-              { title: '🛡️ Reliable', desc: '99.2% on-time delivery rate' },
-              { title: '💰 Fixed Price', desc: 'No hourly rates, no surprises' },
+              { title: '⚡ Lightning Fast', desc: '4 weeks from idea to production-ready launch', icon: '⚡' },
+              { title: '🛡️ 100% Reliable', desc: '99.2% on-time delivery rate, guaranteed', icon: '🛡️' },
+              { title: '💰 Fixed Pricing', desc: 'No hourly rates, no surprises, transparent costs', icon: '💰' },
+              { title: '🤝 Full Support', desc: '30 days post-launch + monthly maintenance plans', icon: '🤝' },
+              { title: '🔒 Secure & Tested', desc: 'Bank-level security, thoroughly tested code', icon: '🔒' },
+              { title: '📈 Proven Results', desc: '150+ successful projects, 98% satisfaction', icon: '📈' },
             ].map((f, i) => (
-              <div key={i} className="p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-orange-500 hover:shadow-xl transition-all">
-                <h3 className="text-2xl font-bold mb-3">{f.title}</h3>
-                <p className="text-gray-600">{f.desc}</p>
+              <div key={i} className="p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-orange-500 hover:shadow-xl transition-all hover:-translate-y-1 group">
+                <div className="text-4xl mb-4">{f.icon}</div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-orange-600 transition-colors">{f.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <Results />
+
+      {/* FAQ */}
+      <FAQ />
+
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-8">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+            </span>
+            <span className="text-sm font-semibold">Limited Spots This Month</span>
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            Ready to Ship Faster?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Join 150+ startups who chose speed over complexity
+          </p>
+
+          <button className="px-12 py-5 bg-white text-orange-600 font-bold text-lg rounded-full shadow-2xl hover:scale-105 transition-all mb-8">
+            Start Your Project Now
+          </button>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm opacity-90">
+            <span>✓ No credit card required</span>
+            <span>✓ 30-day guarantee</span>
+            <span>✓ Free consultation</span>
           </div>
         </div>
       </section>
@@ -96,6 +169,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 bg-gray-900 text-gray-400">
         <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-white mb-2">Relicona</h3>
+            <p className="text-sm">Crypto & AI Products Built Right</p>
+          </div>
           <p className="text-sm">© 2026 Relicona. All rights reserved.</p>
         </div>
       </footer>
