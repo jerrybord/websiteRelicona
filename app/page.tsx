@@ -1,5 +1,6 @@
 import { GetStartedButton } from '../components/ui/GetStartedButton';
 import { FloatingParticles } from '../components/animations/FloatingParticles';
+import { FallingPattern } from '../components/ui/FallingPattern';
 import { CountUp } from '../components/animations/CountUp';
 import { SocialProof } from '../sections/SocialProof';
 import { ResultsWithCharts } from '../sections/ResultsWithCharts';
@@ -19,22 +20,15 @@ export default function Home() {
           <div className="absolute inset-0 top-1/3 bg-[radial-gradient(50%_50%_at_50%_100%,rgba(251,191,36,0.08),transparent)]"></div>
         </div>
 
-        {/* Falling Pattern */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none hidden md:block">
-          <div className="relative w-full h-full animate-float-up" style={{
-            backgroundImage: `
-              radial-gradient(4px 100px at 0px 235px, #FF3827, transparent),
-              radial-gradient(4px 100px at 300px 235px, #FF3537, transparent),
-              radial-gradient(1.5px 1.5px at 150px 117.5px, #FF314F 100%, transparent 150%),
-              radial-gradient(4px 100px at 0px 252px, #FF4A42, transparent),
-              radial-gradient(4px 100px at 300px 252px, #FF6D30, transparent),
-              radial-gradient(1.5px 1.5px at 150px 126px, #FF961B 100%, transparent 150%),
-              radial-gradient(4px 100px at 0px 150px, #FFCA00, transparent)
-            `,
-            backgroundSize: '300px 235px',
-            backgroundPosition: '0px 220px'
-          }} />
-        </div>
+        {/* Falling Pattern (21st.dev inspired) */}
+        <FallingPattern 
+          colors={['#FF3827', '#FF3537', '#FF314F', '#FF4A42', '#FF6D30', '#FF961B', '#FFCA00']}
+          backgroundColor="white"
+          duration={120}
+          blurIntensity="0.8em"
+          opacity={0.5}
+          className="-z-10 hidden md:block"
+        />
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
